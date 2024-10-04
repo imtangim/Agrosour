@@ -73,9 +73,7 @@ class KeysForApi {
 ### 4. Set Up Firebase
 
 1. Visit [Firebase Console](https://console.firebase.google.com/), create a new project, and register your Android and iOS apps.
-2. Download the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) and place them in the appropriate directories:
-   - **For Android**: Place `google-services.json` in `android/app/`.
-   - **For iOS**: Place `GoogleService-Info.plist` in `ios/Runner/`.
+2. Create Project and add flutter app.
 
 ### 5. Set Up Google Authentication
 
@@ -92,6 +90,10 @@ class KeysForApi {
 
 4. For iOS:
    - Ensure that **reversed client ID** from the downloaded `GoogleService-Info.plist` is correctly set in your Xcode project under the URL schemes.
+
+5. Download the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) and place them in the appropriate directories:
+   - **For Android**: Place `google-services.json` in `android/app/`.
+   - **For iOS**: Place `GoogleService-Info.plist` in `ios/Runner/`.
 
 ### 6. Run the App
 
