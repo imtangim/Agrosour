@@ -2,6 +2,9 @@
 
 <img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrisour App" style="border-radius: 15px;">
 
+## 📥 Download Agrisour App
+
+<a href="https://raw.githubusercontent.com/imtangim/Agrisour/assets/app/app.apk" download style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Download App</a>
 
 **Agrisour** is an innovative mobile solution designed to assist farmers with precision agriculture by utilizing sensors, AI, and real-time data to optimize crop yield, soil health, and overall farming efficiency.
 
@@ -22,7 +25,6 @@
 ## 🎥 Demo
 
 [Agrisour App Demo <img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrisour App" style="border-radius: 15px;">](https://www.youtube.com/watch?v=hz2hnEkhN9M)
-
 
 Click the image above to watch a quick demo of the app in action.
 
@@ -56,14 +58,15 @@ Navigate to the project folder and install the required packages:
 ```bash
 flutter pub get
 ```
+
 ### 3. Set Api key
 
-Navigate to the project ```lib/core/theme/keys.dart```:
+Navigate to the project `lib/core/theme/keys.dart`:
 
 ```bash
 class KeysForApi {
-    static const String geminiKey =  "Your gemini key"; 
-    static const String openWeatherKey = "You open weather api key"; 
+    static const String geminiKey =  "Your gemini key";
+    static const String openWeatherKey = "You open weather api key";
 }
 ```
 
@@ -79,12 +82,14 @@ class KeysForApi {
 1. In the [Firebase Console](https://console.firebase.google.com/), go to **Authentication** > **Sign-in method**.
 2. Enable **Google** as a sign-in provider.
 3. For Android:
+
    - Ensure that you have added the correct SHA-1 and SHA-256 keys in your Firebase project settings.
    - You can get the SHA keys using the following command (replace `path_to_keystore` and `alias_name` with your values):
 
    ```bash
    keytool -list -v -keystore path_to_keystore -alias alias_name -storepass your_password
    ```
+
 4. For iOS:
    - Ensure that **reversed client ID** from the downloaded `GoogleService-Info.plist` is correctly set in your Xcode project under the URL schemes.
 
@@ -105,6 +110,7 @@ flutter run --dart-define=FLUTTER_BUILD_MODE=debug
 ### 7. Configure NPK Sensor
 
 - Ensure that your NPK sensor is properly connected and configured with the app. Refer to the documentation for sensor calibration.
+  Here’s a nicely formatted schema for the real-time database that you can add to your Markdown file:
 
 ### 8. AI-Based Leaf Disease Detection
 
@@ -113,6 +119,40 @@ flutter run --dart-define=FLUTTER_BUILD_MODE=debug
 ### 9. Real-time Data Collection
 
 - Set up and calibrate the sensors for collecting soil moisture, temperature, and flood conditions.
+
+## 📊 Realtime Database Schema For Firebase Realtime Database
+
+### Database URL
+
+```
+https://you-project.firebaseio.com/
+```
+
+### Schema Structure
+
+```json
+
+  "sensor_data": {
+    "humidity": 0.6,
+    "moisture": 0.8,
+    "nitrogen": 110,
+    "phosphorus": 130,
+    "potassium": 110,
+    "temperature": 30
+  }
+
+```
+
+### Explanation of Fields
+
+- **humidity**: The current humidity level measured in percentage (0.0 - 1.0).
+- **moisture**: The soil moisture level measured in percentage (0.0 - 1.0).
+- **nitrogen**: The nitrogen content in the soil (in mg/kg).
+- **phosphorus**: The phosphorus content in the soil (in mg/kg).
+- **potassium**: The potassium content in the soil (in mg/kg).
+- **temperature**: The current temperature measured in degrees Celsius.
+
+This schema captures the essential sensor data required for monitoring agricultural conditions, aiding farmers in making informed decisions.
 
 ## 🤝 Contributing
 
