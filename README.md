@@ -56,7 +56,7 @@ Navigate to the project folder and install the required packages:
 ```bash
 flutter pub get
 ```
-### 2. Set Api key
+### 3. Set Api key
 
 Navigate to the project ```lib/core/theme/keys.dart```:
 
@@ -67,14 +67,14 @@ class KeysForApi {
 }
 ```
 
-### 3. Set Up Firebase
+### 4. Set Up Firebase
 
 1. Visit [Firebase Console](https://console.firebase.google.com/), create a new project, and register your Android and iOS apps.
 2. Download the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) and place them in the appropriate directories:
    - **For Android**: Place `google-services.json` in `android/app/`.
    - **For iOS**: Place `GoogleService-Info.plist` in `ios/Runner/`.
 
-### 4. Set Up Google Authentication
+### 5. Set Up Google Authentication
 
 1. In the [Firebase Console](https://console.firebase.google.com/), go to **Authentication** > **Sign-in method**.
 2. Enable **Google** as a sign-in provider.
@@ -88,7 +88,7 @@ class KeysForApi {
 4. For iOS:
    - Ensure that **reversed client ID** from the downloaded `GoogleService-Info.plist` is correctly set in your Xcode project under the URL schemes.
 
-### 5. Run the App
+### 6. Run the App
 
 For Android:
 
@@ -102,15 +102,15 @@ For iOS:
 flutter run --dart-define=FLUTTER_BUILD_MODE=debug
 ```
 
-### 6. Configure NPK Sensor
+### 7. Configure NPK Sensor
 
 - Ensure that your NPK sensor is properly connected and configured with the app. Refer to the documentation for sensor calibration.
 
-### 7. AI-Based Leaf Disease Detection
+### 8. AI-Based Leaf Disease Detection
 
 - Make sure to enable camera access to take pictures for disease detection.
 
-### 8. Real-time Data Collection
+### 9. Real-time Data Collection
 
 - Set up and calibrate the sensors for collecting soil moisture, temperature, and flood conditions.
 
