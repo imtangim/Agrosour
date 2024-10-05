@@ -1,6 +1,6 @@
 # 🌱 Agrosour
 
-<img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrosour App" style="border-radius: 15px;">
+<img src="assets/screenshot/headline.jpg" alt="Agrosour App" style="border-radius: 15px;">
 
 ## 📥 Download Agrosour App
 
@@ -24,7 +24,7 @@
 
 ## 🎥 Demo
 
-[Agrosour App Demo <img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrosour App" style="border-radius: 15px;">](https://www.youtube.com/watch?v=hz2hnEkhN9M)
+[Agrosour App Demo <img src="assets/screenshot/headline.jpg" alt="Agrosour App" style="border-radius: 15px;">](https://www.youtube.com/watch?v=hz2hnEkhN9M)
 
 Click the image above to watch a quick demo of the app in action.
 
@@ -89,6 +89,7 @@ class KeysForApi {
    ```
 
 4. For iOS:
+
    - Ensure that **reversed client ID** from the downloaded `GoogleService-Info.plist` is correctly set in your Xcode project under the URL schemes.
 
 5. Download the `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) and place them in the appropriate directories:
@@ -166,7 +167,3 @@ For any inquiries, feel free to reach out:
 
 - **Email**: tanjim437@gmail.com
 - **GitHub**: [imtangim](https://github.com/imtangim)
-
-
-
-
