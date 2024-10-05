@@ -1,12 +1,12 @@
-# 🌱 Agrisour
+# 🌱 Agrosour
 
-<img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrisour App" style="border-radius: 15px;">
+<img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrosour App" style="border-radius: 15px;">
 
-## 📥 Download Agrisour App
+## 📥 Download Agrosour App
 
-<a href="https://raw.githubusercontent.com/imtangim/Agrisour/assets/app/app.apk" download style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Download App</a>
+<a href="https://raw.githubusercontent.com/imtangim/Agrosour/assets/app/app.apk" download style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Download App</a>
 
-**Agrisour** is an innovative mobile solution designed to assist farmers with precision agriculture by utilizing sensors, AI, and real-time data to optimize crop yield, soil health, and overall farming efficiency.
+**Agrosour** is an innovative mobile solution designed to assist farmers with precision agriculture by utilizing sensors, AI, and real-time data to optimize crop yield, soil health, and overall farming efficiency.
 
 ## 🚀 Features
 
@@ -24,7 +24,7 @@
 
 ## 🎥 Demo
 
-[Agrisour App Demo <img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrisour App" style="border-radius: 15px;">](https://www.youtube.com/watch?v=hz2hnEkhN9M)
+[Agrosour App Demo <img src="assets/screenshot/empty_phone_screen_00017 copy.jpg" alt="Agrosour App" style="border-radius: 15px;">](https://www.youtube.com/watch?v=hz2hnEkhN9M)
 
 Click the image above to watch a quick demo of the app in action.
 
@@ -34,7 +34,7 @@ Click the image above to watch a quick demo of the app in action.
 
 ## 🛠️ Setup Instructions
 
-To get started with the Agrisour App, follow these steps for the initial build:
+To get started with the Agrosour App, follow these steps for the initial build:
 
 ### Prerequisites
 
@@ -47,8 +47,8 @@ Make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/imtangim/Agrisour.git
-cd Agrisour
+git clone https://github.com/imtangim/Agrosour.git
+cd Agrosour
 ```
 
 ### 2. Install Dependencies
@@ -166,3 +166,7 @@ For any inquiries, feel free to reach out:
 
 - **Email**: tanjim437@gmail.com
 - **GitHub**: [imtangim](https://github.com/imtangim)
+
+
+
+
