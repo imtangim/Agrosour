@@ -177,7 +177,7 @@ Firestore stores collections such as `users`, `posts`, `comments`, and `Sensors`
 The `users` collection stores user profiles, including basic contact information and a reference to linked sensor data.
 
 #### Structure:
-```json
+```
 users
 │
 ├── {user_uid_1}
@@ -205,7 +205,7 @@ users
 The `posts` collection stores content shared by users, including text, images, comments, and reactions.
 
 #### Structure:
-```json
+```
 posts
 │
 ├── {post_id_1}
@@ -239,7 +239,7 @@ posts
 The `comments` collection stores individual comments made on posts.
 
 #### Structure:
-```json
+```
 comments
 │
 ├── {comment_id_1}
@@ -265,7 +265,7 @@ comments
 The `Sensors` collection stores sensor data that is linked to specific users. Each document contains environmental data such as temperature, moisture, and nutrients.
 
 #### Structure:
-```json
+```
 Sensors
 │
 ├── {random_sensor_doc_id_1}
@@ -297,7 +297,7 @@ Sensors
 The Firebase **Realtime Database** stores sensor data that is updated in real-time and used for live monitoring. This data is periodically pushed to Firestore when changes are detected.
 
 ### Structure:
-```json
+```
 sensor_data
 │
 ├── {sensor_id_1}
