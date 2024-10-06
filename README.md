@@ -1,6 +1,17 @@
 # 🌱 Agrosour
-
 <img src="assets/screenshot/headline.jpg" alt="Agrosour App" style="border-radius: 15px;">
+
+## List of Contents
+
+- [Introduction](#-download-agrosour-app)
+- [Features](#-features)
+- [Demo](#-demo)
+- [Installation](#-setup-instructions)
+- [Firebase Database Schema](#firebase-database-schema)
+- [Contact](#-contact)
+
+---
+
 
 ## 📥 Download Agrosour App
 
