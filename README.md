@@ -4,9 +4,9 @@
 
 ## 📥 Download Agrosour App
 
-<a href="https://raw.githubusercontent.com/imtangim/Agrisour/assets/app/app.apk" download style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Download App</a>
+<a href="https://raw.githubusercontent.com/imtangim/Agrisour/assets/app/app1.apk" download style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Download App</a>
 
-**Agrosour** is an innovative mobile solution designed to assist farmers with precision agriculture by utilizing sensors, AI, and real-time data to optimize crop yield, soil health, and overall farming efficiency.
+**Agrosour** is an innovative mobile solution designed to assist farmers with precision agriculture by utilizing sensors, AI, and real-time data to optimize crop yield, soil health, and overall farming efficiency. Learn about global natural occurance through Nasa.
 
 ## 🚀 Features
 
@@ -16,6 +16,7 @@
 - **NPK Sensor Integration**: Real-time monitoring of nitrogen, phosphorus, and potassium levels.
 - **Soil Moisture & Temperature Monitoring**: Access hourly data to optimize irrigation and soil conditions.
 - **Flood Sensing**: Receive alerts when flood conditions are detected in your area.
+- **Interactive Global Natural Event Showcase**: See natural events including flood, volacanic explosion, manmade fire etc event with interactive screen.
 - **AI-based Recommendations**: Get AI-driven suggestions to enhance crop health and yield.
 - **Leaf Disease Detection**: Capture photos of leaves and get instant feedback on possible diseases.
 - **Community**: Post, delete, and interact with other farmers in a community to share insights and best practices.
@@ -30,7 +31,7 @@ Click the image above to watch a quick demo of the app in action.
 
 ## 📱 Screenshots
 
-<img src="assets/screenshot/1.png" alt="Login" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/2.png" style="border-radius: 15px;" alt="Dashboard" width="200"> <img src="assets/screenshot/3.png" alt="Sensor Data" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/4.png" alt="Flood Monitoring" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/5.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/6.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/7.png" alt="Profile" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/8.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/9.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/10.png" alt="Result" width="200" style="border-radius: 15px;">
+<img src="assets/screenshot/1.png" alt="Login" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/2.png" style="border-radius: 15px;" alt="Dashboard" width="200"> <img src="assets/screenshot/3.png" alt="Sensor Data" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/4.png" alt="Flood Monitoring" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/glob.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/5.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/6.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/7.png" alt="Profile" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/8.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/9.png" alt="Community" width="200" style="border-radius: 15px;"> <img src="assets/screenshot/10.png" alt="Result" width="200" style="border-radius: 15px;">
 
 ## 🛠️ Setup Instructions
 
@@ -156,6 +157,13 @@ https://you-project.firebaseio.com/
 - **temperature**: The current temperature measured in degrees Celsius.
 
 This schema captures the essential sensor data required for monitoring agricultural conditions, aiding farmers in making informed decisions.
+
+## Api Used in this project
+- **OpenWeather**: Weather Details
+- **Gemini**: Gemini is working as AI helper
+- **EONET NASA**: For natural events finding
+- **Open Meteo**: For Flood and soil related adavnce data
+
 
 ## 🤝 Contributing
 

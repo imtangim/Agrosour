@@ -403,7 +403,7 @@ class WeatherHeader extends StatefulWidget {
 class _WeatherHeaderState extends State<WeatherHeader> {
   @override
   Widget build(BuildContext context) {
-    log(widget.rainMeter);
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
       decoration: BoxDecoration(

@@ -37,7 +37,7 @@ class PostService extends GetxController {
         String downloadUrl = await storageRef.getDownloadURL();
         imageUrls.add(downloadUrl);
       } catch (e) {
-        log(e.toString());
+
       }
     }
     return imageUrls;
@@ -51,13 +51,13 @@ class PostService extends GetxController {
       String uid = auth.currentUser!.uid;
 
       List<String> imageLinks = [];
-      log("Uploadingimage..............");
+
 
       if (images != null && images.isNotEmpty) {
         imageLinks = await uploadImages(images);
       }
 
-      log("Uploading image finish..............");
+  
 
       Map<String, dynamic> postData = {
         'post': postText,

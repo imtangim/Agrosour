@@ -61,6 +61,11 @@ dependencies:
   flutter_markdown: ^0.7.3+2
   rename_app: ^1.6.1
   flutter_native_splash: ^2.4.1
+  flutter_earth_globe: ^1.0.5
+  latlong2: ^0.9.1
+  webview_inapp: ^1.0.4
+  flutter_inappwebview: ^6.1.4
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:
@@ -88,6 +93,7 @@ flutter:
   assets:
     - assets/animation/
     - assets/image/
+    - assets/glob/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -14,7 +14,7 @@ class AuthHandler extends StatelessWidget {
   const AuthHandler({super.key});
 
   Future<bool> _checkUserExists(String uid) async {
-    log(uid);
+
     final userDoc =
         await FirebaseFirestore.instance.collection('users').doc(uid).get();
 

@@ -32,63 +32,69 @@ class _PostDetailsState extends State<PostDetails> {
       ),
       body: GetBuilder<PostService>(builder: (postController) {
         return Stack(
+          fit: StackFit.loose,
           children: [
-            ListView(
-              shrinkWrap: true,
+            Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
-                  // height: 70.h,
-                  width: context.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                    color: const Color(0xfff4f5ef),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.model.usermodel.name,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14.sp,
+                Expanded(
+                  child: Container(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+                    // height: 70.h,
+                    width: context.width,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      color: const Color(0xfff4f5ef),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              widget.model.usermodel.name,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14.sp,
+                              ),
                             ),
+                            if (widget.model.postModel.postUserUid ==
+                                postController.auth.currentUser!.uid)
+                              GestureDetector(
+                                onTap: () async {
+                                  postController
+                                      .deletePost(widget.model.postModel.id);
+                                },
+                                child: Icon(
+                                  Iconsax.trash,
+                                  size: 20.r,
+                                  color: Colors.red,
+                                ),
+                              )
+                          ],
+                        ),
+                        Text(
+                          widget.model.usermodel.address,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12.sp,
                           ),
-                          Text(
-                            widget.model.usermodel.address,
+                        ),
+                        5.verticalSpace,
+                        Flexible(
+                          child: Text(
+                            widget.model.postModel.postText,
+                            overflow: TextOverflow.visible,
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                          5.verticalSpace,
-                          Text(
-                            widget.model.postModel.postText,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
                               fontSize: 13.sp,
+                              overflow: TextOverflow.visible,
                             ),
                           ),
-                        ],
-                      ),
-                      if (widget.model.postModel.postUserUid ==
-                          postController.auth.currentUser!.uid)
-                        GestureDetector(
-                          onTap: () async {
-                            postController
-                                .deletePost(widget.model.postModel.id);
-                          },
-                          child: Icon(
-                            Iconsax.trash,
-                            size: 20.r,
-                            color: Colors.red,
-                          ),
-                        )
-                    ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 if (widget.model.postModel.imageList.isNotEmpty) ...[

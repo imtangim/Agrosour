@@ -30,7 +30,10 @@ class _MonthlyFloodDiagramState extends State<MonthlyFloodDiagram> {
   @override
   void initState() {
     super.initState();
-    fetchFloodData();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      fetchFloodData();
+    });
   }
 
   Future<void> fetchFloodData() async {

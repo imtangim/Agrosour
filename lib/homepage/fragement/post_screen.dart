@@ -68,10 +68,6 @@ class _PostScreenPostState extends State<PostScreenPost> {
                                 image.path.split("/").last ==
                                 element.path.split("/").last) ==
                             -1) {
-                          log(image.path.toString());
-                          for (var element in pickedImage) {
-                            log(element.path.toString());
-                          }
                           pickedImage.add(image);
                           setState(() {});
                         } else {

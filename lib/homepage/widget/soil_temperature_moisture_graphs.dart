@@ -37,7 +37,9 @@ class _SoilTemperatureMoistureGraphsState
   @override
   void initState() {
     super.initState();
-    fetchSoilData();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      fetchSoilData();
+    });
   }
 
   Future<void> fetchSoilData() async {

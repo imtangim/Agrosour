@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:nasa_space_app/authentication/auth_controller.dart';
+import 'package:nasa_space_app/homepage/controller/event_controller.dart';
 import 'package:nasa_space_app/homepage/controller/home_controller.dart';
 import 'package:nasa_space_app/homepage/controller/post_service_controller.dart';
 import 'package:nasa_space_app/homepage/controller/report_controller.dart';
@@ -11,5 +12,6 @@ class GetxBinder extends Bindings {
     Get.put(HomeController());
     Get.put(PostService());
     Get.put(ReportController());
+    Get.put(EventController());
   }
 }
