@@ -4,7 +4,7 @@
 
 ## 📥 Download Agrosour App
 
-<a href="https://raw.githubusercontent.com/imtangim/Agrisour/assets/app/app1.apk" download style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Download App</a>
+<a href="https://raw.githubusercontent.com/imtangim/Agrisour/master/assets/app/app1.apk" download style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; text-align: center; text-decoration: none; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">Download App</a>
 
 **Agrosour** is an innovative mobile solution designed to assist farmers with precision agriculture by utilizing sensors, AI, and real-time data to optimize crop yield, soil health, and overall farming efficiency. Learn about global natural occurance through Nasa.
 
