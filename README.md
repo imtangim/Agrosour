@@ -442,23 +442,6 @@ Future<Map<String, dynamic>?> getPreviousSensorData(String sensorID) async {
 
 `Note:` This is a demo function to show how we have automated our database. Use it on your own risk.
 
-## Connections Between Collections
-
-1. **User and Posts**:  
-   Each user can create multiple posts, identified by the `post_user_uid` field in the `posts` collection.
-
-2. **Posts and Comments**:  
-   Posts contain a reference to comments through the `comment` array, which holds the `comment_uid`. Comments, in turn, link back to the `postID` they belong to.
-
-3. **User and Comments**:  
-   Each comment has a `userid` field that references the `uid` from the `users` collection.
-
-4. **User and Sensors**:  
-   Users are linked to their respective sensor data via the `sensor_id` field in the `users` collection, which corresponds to documents in the `Sensors` collection.
-
-5. **Realtime Sensor Data**:  
-   The `sensor_data` in the Realtime Database mirrors the sensor values from the `Sensors` collection in Firestore, providing live updates for the app.
-
 
 ## Additional Considerations
 
