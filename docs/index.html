@@ -66,6 +66,8 @@
             background-color: #f9f9f9;
             padding: 50px 20px;
             margin-top: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
             border-radius: 10px;
             text-align: center;
         }
@@ -79,7 +81,7 @@
         .ecosystem-features {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
         }
 
         .feature {
@@ -178,51 +180,93 @@
         }
 
         .download-app a:hover {
-            background-color: #0056b3;
+            background-color: #ffffff;
+            color: #e59a54;
         }
 
-        /* Setup Instructions Styles */
-        .setup-instructions {
-            background-color: #fff;
-            padding: 30px;
-            margin: 50px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        /* Setup Container Styles */
+        .setup-container {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
         }
 
-        .setup-instructions h3 {
-            text-align: left;
-            color: #007bff;
+        .setup-title {
+            font-size: 32px;
+            color: #333;
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .setup-instructions p {
-            text-align: left;
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .setup-instructions pre {
-            background-color: #f9f9f9;
+        /* Setup Sections Container */
+        .setup-sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-            font-family: 'Courier New', Courier, monospace;
+            gap: 20px;
         }
 
-        .setup-instructions code {
-            background-color: #eaeaea;
-            padding: 3px 5px;
-            border-radius: 3px;
-            color: #007bff;
+        /* Individual Setup Section Styles */
+        .setup-section {
+            flex: 1;
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Ensures buttons align at the bottom */
         }
 
-        .feature p {
-            font-size: 16px;
+        /* Align button at the bottom */
+        .btn-container {
+            margin-top: auto;
+            /* Pushes the button to the bottom */
+        }
+
+        /* Section Titles */
+        .setup-section h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        /* Paragraph Styles */
+        .setup-section p {
+            font-size: 18px;
             color: #555;
-            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto;
         }
+
+        /* Button Styles */
+        .setup-section a {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #e59a54;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button Hover Effect */
+        .setup-section a:hover {
+            background-color: #d08a48;
+        }
+
+
+        .ecosystem h1 {
+            font-size: 25px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
 
 
         /* Media Queries for Responsive Design */
@@ -242,6 +286,14 @@
             .feature {
                 width: 45%;
             }
+
+            .setup-sections {
+                justify-content: center;
+            }
+
+            .setup-section {
+                width: 100%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -259,6 +311,19 @@
 
             .feature {
                 width: 100%;
+            }
+
+            .setup-section {
+                padding: 20px;
+            }
+
+            .setup-section h2 {
+                font-size: 24px;
+            }
+
+            .setup-section a {
+                font-size: 16px;
+                padding: 10px 20px;
             }
         }
     </style>
@@ -332,45 +397,53 @@
             App</a>
     </section>
 
+    <!-- Setup Instructions Section --
     <!-- Setup Instructions Section -->
-    <!-- Setup Instructions Section -->
-    <div style="margin: 0 20px;"> <!-- Added margin container -->
-        <section id="setup-instructions"
-            style="background-color: #f9f9f9; padding: 40px 20px; text-align: center; margin-top: 40px; border-radius: 10px;">
-            <h2 style="font-size: 32px; color: #333;">⚙️ Setup Instructions for the Flutter App</h2>
-            <p style="font-size: 18px; color: #555; max-width: 800px; margin: 20px auto;">
-                Ready to get started with Agrosour? This is a Flutter app designed for smart agriculture. Follow the
-                comprehensive setup guide to install the app, set up the environment, and start utilizing smart
-                agriculture insights!
-            </p>
-            <a href="https://github.com/imtangim/Agrosour?tab=readme-ov-file#%EF%B8%8F-setup-instructions"
-                target="_blank"
-                style="display: inline-block; padding: 12px 30px; font-size: 18px; color: #fff; background-color: #e59a54; border-radius: 5px; text-decoration: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                View Setup Instructions on GitHub
-            </a>
-        </section>
+
+
+    <div class="setup-container">
+        <h2 class="setup-title">🛠️ Setup Instructions</h2>
+
+        <div class="setup-sections">
+            <!-- Flutter Setup Instructions Section -->
+            <section id="setup-instructions" class="setup-section">
+                <h2>⚙️ Flutter App Setup</h2>
+                <p>
+                    Ready to get started with Agrosour? This is a Flutter app designed for smart agriculture. Follow the
+                    comprehensive setup guide to install the app, set up the environment, and start utilizing smart
+                    agriculture insights!
+                </p>
+                <div class="btn-container">
+                    <a href="https://github.com/imtangim/Agrosour?tab=readme-ov-file#%EF%B8%8F-setup-instructions"
+                        target="_blank">
+                        View Setup Instructions on GitHub
+                    </a>
+                </div>
+            </section>
+
+            <!-- IoT Hardware Setup Instructions Section -->
+            <section id="hardware-setup-instructions" class="setup-section">
+                <h2>🔌 Agrosour IoT Setup</h2>
+                <p>
+                    Explore the hardware components required for Agrosour IoT. Follow the setup guide to connect and
+                    configure your devices for smart agriculture solutions.
+                </p>
+                <div class="btn-container">
+                    <a href="https://github.com/BossBaby25/Agrosour-IoT#agrosour-iot" target="_blank">
+                        View Hardware Setup Instructions on GitHub
+                    </a>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <!-- Hardware Setup Instructions Section -->
-    <div style="margin: 0 20px;"> <!-- Added margin container -->
-        <section id="hardware-setup-instructions"
-            style="background-color: #f9f9f9; padding: 40px 20px; text-align: center; margin-top: 40px; border-radius: 10px;">
-            <h2 style="font-size: 32px; color: #333;">🔌 Hardware Setup Instructions for Agrosour IoT</h2>
-            <p style="font-size: 18px; color: #555; max-width: 800px; margin: 20px auto;">
-                Explore the hardware components required for Agrosour IoT. Follow the setup guide to connect and
-                configure your devices for smart agriculture solutions.
-            </p>
-            <a href="https://github.com/BossBaby25/Agrosour-IoT#agrosour-iot" target="_blank"
-                style="display: inline-block; padding: 12px 30px; font-size: 18px; color: #fff; background-color: #e59a54; border-radius: 5px; text-decoration: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                View Hardware Setup Instructions on GitHub
-            </a>
-        </section>
-    </div>
+
+
 
 
     <section class="ecosystem">
-        <h1>Future Development</h1>
-        <h2>Agrosour-E Ecosystem: The Beehive Model for Crop Health, Farmer Profits, and Food Security</h2>
+        <h2>Future Development</h2>
+        <h1>Agrosour-E Ecosystem: The Beehive Model for Crop Health, Farmer Profits, and Food Security</h1>
         <div class="ecosystem-features">
             <div class="feature">
                 <h3>IoT-Driven Farming Network</h3>
