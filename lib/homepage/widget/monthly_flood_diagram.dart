@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:math' as math;
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geolocator/geolocator.dart';
@@ -73,7 +74,9 @@ class _MonthlyFloodDiagramState extends State<MonthlyFloodDiagram> {
         throw Exception('Failed to load flood data');
       }
     } catch (e) {
-      print('Error fetching data: $e');
+      if (kDebugMode) {
+        print('Error fetching data: $e');
+      }
     }
   }
 
@@ -219,7 +222,7 @@ class _MonthlyFloodDiagramState extends State<MonthlyFloodDiagram> {
 
               return LineTooltipItem(
                 tooltipText,
-                TextStyle(
+                const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),

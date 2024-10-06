@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -65,7 +66,9 @@ class _HomepageState extends State<Homepage>
         );
       }
     } catch (e) {
-      print("Error: $e");
+      if (kDebugMode) {
+        print("Error: $e");
+      }
     }
   }
 
@@ -135,7 +138,7 @@ class _HomepageState extends State<Homepage>
                       isScrollable: true,
                       dividerColor: Colors.transparent,
                       indicatorColor: Colors.transparent,
-                      indicator: BoxDecoration(color: Colors.transparent),
+                      indicator: const BoxDecoration(color: Colors.transparent),
                       padding: const EdgeInsets.all(0),
                       tabAlignment: TabAlignment.start,
                       splashFactory: NoSplash.splashFactory,

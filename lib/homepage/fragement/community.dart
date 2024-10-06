@@ -132,7 +132,7 @@ class PostCard extends StatelessWidget {
                     onPressed: () {
                       controller.deletePost(model.postModel.id);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Iconsax.trash,
                       color: Colors.red,
                     ),

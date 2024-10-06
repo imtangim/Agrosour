@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:nasa_space_app/homepage/model/api_sensor_model.dart';
@@ -40,10 +41,14 @@ class ReportController extends GetxController {
         final Map<String, dynamic> data = jsonDecode(response.body);
         apiSensorDataModel = ApiSensorDataModel.fromJson(data);
       } else {
-        print('Failed to load sensor data: ${response.statusCode}');
+        if (kDebugMode) {
+          print('Failed to load sensor data: ${response.statusCode}');
+        }
       }
     } catch (e) {
-      print('Error: $e');
+      if (kDebugMode) {
+        print('Error: $e');
+      }
     } finally {
       update();
     }

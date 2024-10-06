@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:math' as math;
 import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geolocator/geolocator.dart';
@@ -86,7 +87,9 @@ class _SoilTemperatureMoistureGraphsState
         throw Exception('Failed to load soil data');
       }
     } catch (e) {
-      print('Error fetching soil data: $e');
+      if (kDebugMode) {
+        print('Error fetching soil data: $e');
+      }
     }
   }
 

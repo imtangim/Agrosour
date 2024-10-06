@@ -1,8 +1,6 @@
-import 'dart:collection';
 import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_earth_globe/flutter_earth_globe_controller.dart';
 import 'package:flutter_earth_globe/globe_coordinates.dart';
@@ -13,11 +11,9 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:latlong2/latlong.dart';
 import 'package:nasa_space_app/homepage/controller/home_controller.dart';
-import 'package:nasa_space_app/homepage/fragement/source_view.dart';
 import 'package:nasa_space_app/homepage/model/event_catagory_model.dart';
 import 'package:nasa_space_app/homepage/model/event_model.dart';
 import 'package:nasa_space_app/homepage/model/point_model.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class EventController extends GetxController {
   bool isLoading = false;
@@ -161,7 +157,7 @@ class EventController extends GetxController {
                   color: pointModel.color,
                   size: 3.r,
                 ),
-                
+
                 onTap: () {
                   sourceViewer(url: pointModel.source);
                 },
@@ -196,7 +192,9 @@ class EventController extends GetxController {
           globeController.addPoint(element);
         }
       } else {
-        print('Failed to load data: ${response.statusCode}');
+        if (kDebugMode) {
+          print('Failed to load data: ${response.statusCode}');
+        }
       }
     } finally {
       isLoading = false;

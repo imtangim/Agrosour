@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:get/get.dart';
 import 'package:nasa_space_app/core/theme/keys.dart';
@@ -185,7 +186,9 @@ class HomeController extends GetxController {
         return 0; // No data available
       }
     } catch (e) {
-      print('Error fetching sensor data length: $e');
+      if (kDebugMode) {
+        print('Error fetching sensor data length: $e');
+      }
       return 0; // Return 0 in case of an error
     }
   }

@@ -1,5 +1,5 @@
-import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -86,7 +86,9 @@ class _OverviewFragmentsState extends State<OverviewFragments> {
         );
       }
     } catch (e) {
-      print("Error: $e");
+      if (kDebugMode) {
+        print("Error: $e");
+      }
     }
   }
 
@@ -144,7 +146,7 @@ class _OverviewFragmentsState extends State<OverviewFragments> {
                       children: [
                         const Icon(
                           Iconsax.camera,
-                          color: const Color(0xffe59a54),
+                          color: Color(0xffe59a54),
                         ),
                         10.horizontalSpace,
                         Text(
