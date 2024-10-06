@@ -1,0 +1,80 @@
+
+// Firebase Firestore database users Schema
+users
+│
+├── K0ZUBJVMj3Yyl1Lo1z2ontj5dvx1
+│   ├── address: ""
+│   ├── email: "trjuned2@gmail.com"
+│   ├── mobile: ""
+│   ├── name: ""
+│   │── sensor_id:"122132sasa"
+│   └── uid: "K0ZUBJVMj3Yyl1Lo1z2ontj5dvx1"
+│
+├── MLY3mhyMkUTTpNXlnxbKClOMBaN2
+│   ├── address: ""
+│   ├── email: "example2@gmail.com"
+│   ├── mobile: ""
+│   ├── name: ""
+│   └── uid: "MLY3mhyMkUTTpNXlnxbKClOMBaN2"
+│
+├── Qm6FyZMyUhaUZ5FkT5pIbbQ7MU82
+│   ├── address: ""
+│   ├── email: "example3@gmail.com"
+│   ├── mobile: ""
+│   ├── name: ""
+│   └── uid: "Qm6FyZMyUhaUZ5FkT5pIbbQ7MU82"
+│
+
+
+// Firebase Firestore Database Sensors Schema
+Sensors
+│
+└── id1
+│     ├── humidity: 0.6
+│     ├── moisture: 0.8
+│     ├── nitrogen: 110
+│     ├── phosphorus: 130
+│     ├── potassium: 110
+│     ├── temperature: 30
+│     ├── sensor_ID: "sensor_ID"
+│     └── timeStamp: DateTime.now()
+│── id2
+│     ├── humidity: 0.6
+│     ├── moisture: 0.8
+│     ├── nitrogen: 110
+│     ├── phosphorus: 130
+│     ├── potassium: 110
+│     ├── temperature: 30
+│     ├── sensor_ID: "sensor_ID"
+│     └── timeStamp: DateTime.now()
+
+
+
+
+
+// Firebase Realtime Database Schema
+sensor_data
+│
+├── sensor_id_1
+│   ├── humidity: 0.6
+│   ├── moisture: 0.8
+│   ├── nitrogen: 110
+│   ├── phosphorus: 130
+│   ├── potassium: 110
+│   └── temperature: 30
+│
+├── sensor_id_2
+│   ├── humidity: 0.7
+│   ├── moisture: 0.75
+│   ├── nitrogen: 115
+│   ├── phosphorus: 125
+│   ├── potassium: 120
+│   └── temperature: 29
+│
+├── sensor_id_3
+│   ├── humidity: 0.5
+│   ├── moisture: 0.85
+│   ├── nitrogen: 100
+│   ├── phosphorus: 135
+│   ├── potassium: 105
+│   └── temperature: 32

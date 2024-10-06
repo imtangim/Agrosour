@@ -136,13 +136,15 @@ https://you-project.firebaseio.com/
 
 ```json
 
-  "sensor_data": {
-    "humidity": 0.6,
-    "moisture": 0.8,
-    "nitrogen": 110,
-    "phosphorus": 130,
-    "potassium": 110,
-    "temperature": 30
+  "sensor_data":{
+    "sensor_id": {
+      "humidity": 0.6,
+      "moisture": 0.8,
+      "nitrogen": 110,
+      "phosphorus": 130,
+      "potassium": 110,
+      "temperature": 30
+   }
   }
 
 ```
@@ -158,12 +160,325 @@ https://you-project.firebaseio.com/
 
 This schema captures the essential sensor data required for monitoring agricultural conditions, aiding farmers in making informed decisions.
 
+___
+
+# Firebase Database Schema
+
+This project uses **Firebase Firestore** and **Firebase Realtime Database** for handling user data, posts, comments, and sensor data in real-time. The structure below outlines the database collections, fields, and their relationships, along with a description of a function that listens for changes in the Realtime Database and updates Firestore accordingly.
+
+## Firestore Database
+
+Firestore stores collections such as `users`, `posts`, `comments`, and `Sensors`. Each of these collections has a structured document format explained below.
+
+
+
+### 1. **Users Collection**
+
+The `users` collection stores user profiles, including basic contact information and a reference to linked sensor data.
+
+#### Structure:
+```json
+users
+│
+├── {user_uid_1}
+│   ├── address: ""
+│   ├── email: "user@example.com"
+│   ├── mobile: "123456789"
+│   ├── name: "John Doe"
+│   ├── sensor_id: "sensor_id_1"
+│   └── uid: "K0ZUBJVMj3Yyl1Lo1z2ontj5dvx1"
+```
+
+#### Field Explanations:
+
+- **address**: The user's address. Stored as a string.
+- **email**: The user's email address for account identification. Stored as a string.
+- **mobile**: The user's phone number. Stored as a string.
+- **name**: The full name of the user. Stored as a string.
+- **sensor_id**: A unique identifier for the sensor data associated with the user. This field links the user to sensor data in the `Sensors` collection. Stored as a string.
+- **uid**: The user's unique identifier in Firebase Authentication. Stored as a string.
+
+---
+
+### 2. **Posts Collection**
+
+The `posts` collection stores content shared by users, including text, images, comments, and reactions.
+
+#### Structure:
+```json
+posts
+│
+├── {post_id_1}
+│   ├── comment (Array)
+│   │   └── [0]: "comment_uid_1"
+│   ├── image_link: null
+│   ├── image_list (Array)
+│   │   └── [0]: "image_url_1"
+│   ├── post: "Post content"
+│   ├── post_id: "8f837de8-85fe-42c7-b265-367f5e3b6e50"
+│   ├── post_user_uid: "user_uid_1"
+│   ├── reaction (Array)
+│   │   └── [0]: "user_uid_2"
+│   └── timestamp: "2024-10-03 11:00:39 UTC+6"
+```
+
+#### Field Explanations:
+
+- **comment**: An array of comment IDs related to this post. Each ID links to a document in the `comments` collection.
+- **image_link**: A direct URL to a single image related to the post (if present). It can be `null` if no image is provided.
+- **image_list**: An array of URLs for multiple images uploaded with the post. Each element stores the URL of an image.
+- **post**: The actual content of the post (text). Stored as a string.
+- **post_id**: A unique identifier for the post. Stored as a string.
+- **post_user_uid**: The unique identifier of the user who created the post. Links back to the `users` collection. Stored as a string.
+- **reaction**: An array of user UIDs who reacted (liked or interacted) with the post.
+- **timestamp**: The time when the post was created. Stored as a timestamp.
+
+
+### 3. **Comments Collection**
+
+The `comments` collection stores individual comments made on posts.
+
+#### Structure:
+```json
+comments
+│
+├── {comment_id_1}
+│   ├── commentid: "6bace055-9ac9-4956-9324-0d009e42448c"
+│   ├── postID: "8f837de8-85fe-42c7-b265-367f5e3b6e50"
+│   ├── text: "This is a comment"
+│   ├── timestamp: "2024-10-04 16:39:32 UTC+6"
+│   └── userid: "user_uid_2"
+```
+
+#### Field Explanations:
+
+- **commentid**: A unique identifier for the comment. Stored as a string.
+- **postID**: The unique ID of the post the comment is associated with. Links back to the `posts` collection.
+- **text**: The content of the comment. Stored as a string.
+- **timestamp**: The time when the comment was posted. Stored as a timestamp.
+- **userid**: The unique ID of the user who made the comment. Links back to the `users` collection.
+
+---
+
+### 4. **Sensors Collection**
+
+The `Sensors` collection stores sensor data that is linked to specific users. Each document contains environmental data such as temperature, moisture, and nutrients.
+
+#### Structure:
+```json
+Sensors
+│
+├── {random_sensor_doc_id_1}
+│   ├── humidity: 0.6
+│   ├── moisture: 0.8
+│   ├── nitrogen: 110
+│   ├── phosphorus: 130
+│   ├── potassium: 110
+│   ├── temperature: 30
+│   ├── sensor_ID: "sensor_id_1"
+│   └── timeStamp: "2024-10-03 11:00:39 UTC+6"
+```
+
+#### Field Explanations:
+
+- **humidity**: The relative humidity level in percentage (0.6 = 60%). Stored as a float.
+- **moisture**: The soil moisture level. Stored as a float.
+- **nitrogen**: The nitrogen level in the soil. Stored as an integer.
+- **phosphorus**: The phosphorus level in the soil. Stored as an integer.
+- **potassium**: The potassium level in the soil. Stored as an integer.
+- **temperature**: The current temperature in degrees Celsius. Stored as an integer.
+- **sensor_ID**: A unique identifier that links the sensor data to a specific user in the `users` collection.
+- **timeStamp**: The time when the sensor data was recorded. Stored as a timestamp.
+
+
+
+## Firebase Realtime Database
+
+The Firebase **Realtime Database** stores sensor data that is updated in real-time and used for live monitoring. This data is periodically pushed to Firestore when changes are detected.
+
+### Structure:
+```json
+sensor_data
+│
+├── {sensor_id_1}
+│   ├── humidity: 0.6
+│   ├── moisture: 0.8
+│   ├── nitrogen: 110
+│   ├── phosphorus: 130
+│   ├── potassium: 110
+│   └── temperature: 30
+│
+├── {sensor_id_2}
+│   ├── humidity: 0.7
+│   ├── moisture: 0.75
+│   ├── nitrogen: 115
+│   ├── phosphorus: 125
+│   ├── potassium: 120
+│   └── temperature: 29
+```
+
+#### Field Explanations:
+
+- **humidity**: The current humidity level in percentage. Stored as a float.
+- **moisture**: The soil moisture level. Stored as a float.
+- **nitrogen**: The nitrogen level in the soil. Stored as an integer.
+- **phosphorus**: The phosphorus level in the soil. Stored as an integer.
+- **potassium**: The potassium level in the soil. Stored as an integer.
+- **temperature**: The current temperature in degrees Celsius. Stored as an integer.
+
+
+
+## Connections Between Collections
+
+- **User and Posts**:  
+  Each user can create multiple posts, and each post references the user through `post_user_uid`.
+  
+- **Posts and Comments**:  
+  Posts are linked to their comments through the `comment` array, which holds comment IDs. Each comment is linked back to the corresponding post via `postID`.
+  
+- **User and Comments**:  
+  Users are linked to comments via the `userid` field in the `comments` collection.
+  
+- **User and Sensors**:  
+  The `sensor_id` in the `users` collection links each user to their respective sensor data in the `Sensors` collection.
+
+- **Realtime Sensor Data and Firestore**:  
+  Sensor data is captured in real-time in the `sensor_data` of the Realtime Database. When a significant change is detected, the data is written to the `Sensors` collection in Firestore.
+
+
+
+## Function to Listen for Realtime Database Changes
+
+The application uses a function to monitor changes in the Firebase Realtime Database. When the function detects a noticeable change in sensor data, it automatically creates a new document in the Firestore `Sensors` collection with a random ID.
+
+### Example Function:
+
+```dart
+void monitorSensorData() {
+  DatabaseReference ref = FirebaseDatabase.instance.ref("sensor_data");
+  
+  ref.onValue.listen((DatabaseEvent event) {
+    Map<String, dynamic
+
+> newSensorData = event.snapshot.value as Map<String, dynamic>;
+    
+    // Check for significant changes
+    if (isChangeSignificant(newSensorData)) {
+      // Create new document in Firestore with a random ID
+      FirebaseFirestore.instance.collection("Sensors").add({
+        "humidity": newSensorData['humidity'],
+        "moisture": newSensorData['moisture'],
+        "nitrogen": newSensorData['nitrogen'],
+        "phosphorus": newSensorData['phosphorus'],
+        "potassium": newSensorData['potassium'],
+        "temperature": newSensorData['temperature'],
+        "sensor_ID": newSensorData['sensor_ID'],  // Change: Use correct sensor_ID
+        "timeStamp": Timestamp.now(),
+      });
+    }
+  });
+}
+
+Future<bool> isChangeSignificant(Map<String, dynamic> newData) async {
+  // Define threshold values
+  const double moistureThreshold = 0.05;  // 5% change in moisture is significant
+  const double temperatureThreshold = 2.0;  // 2°C change in temperature is significant
+  const int nitrogenThreshold = 10;  // 10 units change in nitrogen is significant
+  const int phosphorusThreshold = 10;  // 10 units change in phosphorus is significant
+  const int potassiumThreshold = 10;  // 10 units change in potassium is significant
+
+  Map<String, dynamic>? previousData = await getPreviousSensorData(newData['sensor_ID']);
+
+  if (previousData == null || previousData.isEmpty) {
+  
+    return true;
+  }
+
+  
+  bool isSignificant = 
+      (newData['moisture'] - previousData['moisture']).abs() > moistureThreshold ||
+      (newData['temperature'] - previousData['temperature']).abs() > temperatureThreshold ||
+      (newData['nitrogen'] - previousData['nitrogen']).abs() > nitrogenThreshold ||
+      (newData['phosphorus'] - previousData['phosphorus']).abs() > phosphorusThreshold ||
+      (newData['potassium'] - previousData['potassium']).abs() > potassiumThreshold;
+
+  return isSignificant;
+}
+
+Future<Map<String, dynamic>?> getPreviousSensorData(String sensorID) async {
+
+  QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+      .collection("Sensors")
+      .where("sensor_ID", isEqualTo: sensorID)
+      .orderBy("timeStamp", descending: true)
+      .limit(1)
+      .get();
+
+  if (querySnapshot.docs.isNotEmpty) {
+
+    return querySnapshot.docs.first.data() as Map<String, dynamic>?;
+  } else {
+
+    return null;
+  }
+}
+
+```
+
+
+### Explanation:
+
+#### `isChangeSignificant`:
+
+- This function now uses **`getPreviousSensorData`** to retrieve the last recorded sensor data from the **`Sensors`** collection in Firestore.
+- If no previous data is found, it assumes that this is the first data entry and returns `true`, considering the change as significant.
+- It then compares the new data with the previous data using the defined thresholds to check for significant changes.
+
+#### `getPreviousSensorData`:
+
+- Queries the **`Sensors`** collection to find the most recent document for the given **`sensor_ID`**.
+- It orders the documents by **`timeStamp`** in descending order to fetch the latest document.
+- The function returns the data from the latest document if found; otherwise, it returns `null` if no data is available for the specified **`sensor_ID`**.
+
+`Note:` This is a demo function to show how we have automated our database. Use it on your own risk.
+
+## Connections Between Collections
+
+1. **User and Posts**:  
+   Each user can create multiple posts, identified by the `post_user_uid` field in the `posts` collection.
+
+2. **Posts and Comments**:  
+   Posts contain a reference to comments through the `comment` array, which holds the `comment_uid`. Comments, in turn, link back to the `postID` they belong to.
+
+3. **User and Comments**:  
+   Each comment has a `userid` field that references the `uid` from the `users` collection.
+
+4. **User and Sensors**:  
+   Users are linked to their respective sensor data via the `sensor_id` field in the `users` collection, which corresponds to documents in the `Sensors` collection.
+
+5. **Realtime Sensor Data**:  
+   The `sensor_data` in the Realtime Database mirrors the sensor values from the `Sensors` collection in Firestore, providing live updates for the app.
+
+
+## Additional Considerations
+
+- **Scalability**: Firestore and Realtime Database together provide both structured querying and real-time updates, allowing for a flexible and scalable database design.
+  
+- **Security**: Ensure proper **Firebase Security Rules** are set to allow only authenticated users to read/write their own data.
+
+
+
+This structure provides a clear and scalable way to manage posts, comments, and sensor data in the application.
+
+---
+
+
 ## Api Used in this project
+
 - **OpenWeather**: Weather Details
 - **Gemini**: Gemini is working as AI helper
 - **EONET NASA**: For natural events finding
 - **Open Meteo**: For Flood and soil related adavnce data
-
 
 ## 🤝 Contributing
 
