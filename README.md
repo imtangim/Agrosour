@@ -6,7 +6,7 @@
 - [Introduction](#-download-agrosour-app)
 - [Features](#-features)
 - [Demo](#-demo)
-- [Installation](#-setup-instructions)
+- [Installation](#%EF%B8%8F-setup-instructions)
 - [Firebase Database Schema](#firebase-database-schema)
 - [Contact](#-contact)
 
