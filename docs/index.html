@@ -62,6 +62,51 @@
             text-align: center;
         }
 
+        .ecosystem {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            margin-top: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .ecosystem h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .ecosystem-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .feature {
+            background: #fff;
+            padding: 20px;
+            margin: 15px;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature h3 {
+            font-size: 20px;
+            color: #e59a54;
+            margin-bottom: 10px;
+            text-align: center;
+
+        }
+
+
         /* Updated Screenshots Section */
         .screenshots-wrapper {
             display: flex;
@@ -173,6 +218,13 @@
             color: #007bff;
         }
 
+        .feature p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+
         /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
             .feature-list li {
@@ -185,6 +237,10 @@
 
             .setup-instructions pre {
                 font-size: 14px;
+            }
+
+            .feature {
+                width: 45%;
             }
         }
 
@@ -199,6 +255,10 @@
 
             .setup-instructions pre {
                 font-size: 12px;
+            }
+
+            .feature {
+                width: 100%;
             }
         }
     </style>
@@ -308,6 +368,42 @@
     </div>
 
 
+    <section class="ecosystem">
+        <h1>Future Development</h1>
+        <h2>Agrosour-E Ecosystem: The Beehive Model for Crop Health, Farmer Profits, and Food Security</h2>
+        <div class="ecosystem-features">
+            <div class="feature">
+                <h3>IoT-Driven Farming Network</h3>
+                <p>LoRa-powered IoT devices monitor real-time soil health, moisture, and field conditions, creating a
+                    connected, data-driven farming system.</p>
+            </div>
+            <div class="feature">
+                <h3>Collaborative Beehive Model</h3>
+                <p>Farmers unite through the app to share knowledge, solve issues, and support each other with insights
+                    on crop health, water management, and pest control.</p>
+            </div>
+            <div class="feature">
+                <h3>Community Market System</h3>
+                <p>Farmers collaborate on crop choices, share resources, and utilize regional data to plan together,
+                    ensuring collective success.</p>
+            </div>
+            <div class="feature">
+                <h3>Smart Decisions</h3>
+                <p>Data-driven recommendations, AI analysis, and NASA datasets optimize yields and income with real-time
+                    alerts and weather insights.</p>
+            </div>
+            <div class="feature">
+                <h3>Pest & Disease Detection</h3>
+                <p>AI-powered crop image analysis detects pests and diseases, providing actionable advice and community
+                    support.</p>
+            </div>
+            <div class="feature">
+                <h3>Sustainability Hub</h3>
+                <p>Water management, early flood warnings, and irrigation advice enhance farming resilience and
+                    long-term sustainability.</p>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Contact Section -->
