@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agrosour Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #e59a54;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .features,
+        .screenshots,
+        .contact {
+            margin: 50px 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        /* Updated Screenshots Section */
+        .screenshots-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .screenshots img {
+            width: 100%;
+            max-width: 120px;
+            margin: 10px 0;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 40px auto;
+        }
+
+        .video-container iframe {
+            /* width: 100%; */
+            max-width: 100%;
+            height: 300;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #e59a54;
+            ;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .contact a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .download-app {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .download-app a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e59a54;
+            ;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-app a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Setup Instructions Styles */
+        .setup-instructions {
+            background-color: #fff;
+            padding: 30px;
+            margin: 50px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .setup-instructions h3 {
+            text-align: left;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .setup-instructions p {
+            text-align: left;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .setup-instructions pre {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .setup-instructions code {
+            background-color: #eaeaea;
+            padding: 3px 5px;
+            border-radius: 3px;
+            color: #007bff;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .feature-list li {
+                width: 45%;
+            }
+
+            .screenshots img {
+                width: 45%;
+            }
+
+            .setup-instructions pre {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature-list li {
+                width: 100%;
+            }
+
+            .screenshots img {
+                width: 100%;
+            }
+
+            .setup-instructions pre {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Agrosour-অগ্রসর</h1>
+    </header>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <section id="introduction">
+            <h2>Agrosour</h2>
+            <p><strong>Agrosour</strong> is an innovative mobile solution designed to assist farmers with precision
+                agriculture by utilizing sensors, AI, and real-time data to optimize crop yield, soil health, and
+                overall farming efficiency. Learn about global natural occurance through Nasa.</p>
+
+            <!-- Centered iFrame -->
+            <!-- Centered iFrame -->
+            <div class="video-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VD6p-C4b0ow"
+                    title="30 Seconds of Glory | Agrosour-অগ্রসর | T-MINUS-ZERO | NASA Space Apps Challenge 2024"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/hz2hnEkhN9M"
+                    title="🚀 NASA Space Apps Challenge 2024 | Agrosour: Using Earth Observation Data for Smart Agriculture 🌍"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+    </div>
+    </section>
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Features</h2>
+        <ul class="feature-list">
+            <li>User Profile for personalized tracking</li>
+            <li>Google Authentication for secure sign-in</li>
+            <li>Real-time Data Collection from NPK Sensors</li>
+            <li>Soil Moisture and Temperature Monitoring</li>
+            <li>AI-based Leaf Disease Detection</li>
+            <li>Weather Forecast Integration</li>
+            <li>Flood Detection and Alerts</li>
+            <li>Community Features for sharing insights</li>
+            <li>Global Natural Event Showcase via NASA API</li>
+        </ul>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots">
+        <h2>App Screenshots</h2>
+        <div class="screenshots-wrapper">
+            <img src="../assets/screenshot/1.png" alt="Login"> <img src="../assets/screenshot/2.png" alt="Dashboard">
+            <img src="../assets/screenshot/3.png" alt="Sensor Data"> <img src="../assets/screenshot/4.png"
+                alt="Flood Monitoring"> <img src="../assets/screenshot/glob.png" alt="Community"> <img
+                src="../assets/screenshot/5.png" alt="Community"> <img src="../assets/screenshot/6.png" alt="Community">
+            <img src="../assets/screenshot/7.png" alt="Profile"> <img src="../assets/screenshot/8.png" alt="Community">
+            <img src="../assets/screenshot/9.png" alt="Community"> <img src="../assets/screenshot/10.png" alt="Result">
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-app">
+        <h2>📥 Download Agrosour App</h2>
+        <a href="https://raw.githubusercontent.com/imtangim/Agrisour/master/assets/app/app1.apk" download>Download
+            App</a>
+    </section>
+
+    <!-- Setup Instructions Section -->
+    <!-- Setup Instructions Section -->
+    <div style="margin: 0 20px;"> <!-- Added margin container -->
+        <section id="setup-instructions"
+            style="background-color: #f9f9f9; padding: 40px 20px; text-align: center; margin-top: 40px; border-radius: 10px;">
+            <h2 style="font-size: 32px; color: #333;">⚙️ Setup Instructions for the Flutter App</h2>
+            <p style="font-size: 18px; color: #555; max-width: 800px; margin: 20px auto;">
+                Ready to get started with Agrosour? This is a Flutter app designed for smart agriculture. Follow the
+                comprehensive setup guide to install the app, set up the environment, and start utilizing smart
+                agriculture insights!
+            </p>
+            <a href="https://github.com/imtangim/Agrosour?tab=readme-ov-file#%EF%B8%8F-setup-instructions"
+                target="_blank"
+                style="display: inline-block; padding: 12px 30px; font-size: 18px; color: #fff; background-color: #e59a54; border-radius: 5px; text-decoration: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                View Setup Instructions on GitHub
+            </a>
+        </section>
+    </div>
+
+    <!-- Hardware Setup Instructions Section -->
+    <div style="margin: 0 20px;"> <!-- Added margin container -->
+        <section id="hardware-setup-instructions"
+            style="background-color: #f9f9f9; padding: 40px 20px; text-align: center; margin-top: 40px; border-radius: 10px;">
+            <h2 style="font-size: 32px; color: #333;">🔌 Hardware Setup Instructions for Agrosour IoT</h2>
+            <p style="font-size: 18px; color: #555; max-width: 800px; margin: 20px auto;">
+                Explore the hardware components required for Agrosour IoT. Follow the setup guide to connect and
+                configure your devices for smart agriculture solutions.
+            </p>
+            <a href="https://github.com/BossBaby25/Agrosour-IoT#agrosour-iot" target="_blank"
+                style="display: inline-block; padding: 12px 30px; font-size: 18px; color: #fff; background-color: #e59a54; border-radius: 5px; text-decoration: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                View Hardware Setup Instructions on GitHub
+            </a>
+        </section>
+    </div>
+
+
+
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries, feel free to reach out to us at:</p>
+        <a href="mailto:tanjim437@gmail.com">T-Minus-Zero</a>
+    </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Agrosour. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

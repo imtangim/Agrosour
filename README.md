@@ -1,4 +1,5 @@
 # 🌱 Agrosour
+
 <img src="assets/screenshot/headline.jpg" alt="Agrosour App" style="border-radius: 15px;">
 
 ## List of Contents
@@ -6,12 +7,12 @@
 - [Introduction](#-download-agrosour-app)
 - [Features](#-features)
 - [Demo](#-demo)
+- [Hardware Setup](#7-configure-npk-sensor)
 - [Installation](#%EF%B8%8F-setup-instructions)
 - [Firebase Database Schema](#firebase-database-schema)
 - [Contact](#-contact)
 
 ---
-
 
 ## 📥 Download Agrosour App
 
@@ -124,8 +125,10 @@ flutter run --dart-define=FLUTTER_BUILD_MODE=debug
 
 ### 7. Configure NPK Sensor
 
-- Ensure that your NPK sensor is properly connected and configured with the app. Refer to the documentation for sensor calibration.
-  Here’s a nicely formatted schema for the real-time database that you can add to your Markdown file:
+- Ensure that your NPK sensor and main hardware are properly connected and configured with the app.
+- For detailed instructions on hardware setup and sensor calibration, please refer to the [Hardware Configuration Guide](https://github.com/BossBaby25/Agrosour-IoT) in the dedicated repository.
+
+Make sure to follow the calibration steps accurately to ensure correct data integration with the app.
 
 ### 8. AI-Based Leaf Disease Detection
 
@@ -171,7 +174,7 @@ https://you-project.firebaseio.com/
 
 This schema captures the essential sensor data required for monitoring agricultural conditions, aiding farmers in making informed decisions.
 
-___
+---
 
 # Firebase Database Schema
 
@@ -181,13 +184,12 @@ This project uses **Firebase Firestore** and **Firebase Realtime Database** for 
 
 Firestore stores collections such as `users`, `posts`, `comments`, and `Sensors`. Each of these collections has a structured document format explained below.
 
-
-
 ### 1. **Users Collection**
 
 The `users` collection stores user profiles, including basic contact information and a reference to linked sensor data.
 
 #### Structure:
+
 ```
 users
 │
@@ -216,6 +218,7 @@ users
 The `posts` collection stores content shared by users, including text, images, comments, and reactions.
 
 #### Structure:
+
 ```
 posts
 │
@@ -244,12 +247,12 @@ posts
 - **reaction**: An array of user UIDs who reacted (liked or interacted) with the post.
 - **timestamp**: The time when the post was created. Stored as a timestamp.
 
-
 ### 3. **Comments Collection**
 
 The `comments` collection stores individual comments made on posts.
 
 #### Structure:
+
 ```
 comments
 │
@@ -276,6 +279,7 @@ comments
 The `Sensors` collection stores sensor data that is linked to specific users. Each document contains environmental data such as temperature, moisture, and nutrients.
 
 #### Structure:
+
 ```
 Sensors
 │
@@ -301,13 +305,12 @@ Sensors
 - **sensor_ID**: A unique identifier that links the sensor data to a specific user in the `users` collection.
 - **timeStamp**: The time when the sensor data was recorded. Stored as a timestamp.
 
-
-
 ## Firebase Realtime Database
 
 The Firebase **Realtime Database** stores sensor data that is updated in real-time and used for live monitoring. This data is periodically pushed to Firestore when changes are detected.
 
 ### Structure:
+
 ```
 sensor_data
 │
@@ -337,26 +340,19 @@ sensor_data
 - **potassium**: The potassium level in the soil. Stored as an integer.
 - **temperature**: The current temperature in degrees Celsius. Stored as an integer.
 
-
-
 ## Connections Between Collections
 
 - **User and Posts**:  
   Each user can create multiple posts, and each post references the user through `post_user_uid`.
-  
 - **Posts and Comments**:  
   Posts are linked to their comments through the `comment` array, which holds comment IDs. Each comment is linked back to the corresponding post via `postID`.
-  
 - **User and Comments**:  
   Users are linked to comments via the `userid` field in the `comments` collection.
-  
 - **User and Sensors**:  
   The `sensor_id` in the `users` collection links each user to their respective sensor data in the `Sensors` collection.
 
 - **Realtime Sensor Data and Firestore**:  
   Sensor data is captured in real-time in the `sensor_data` of the Realtime Database. When a significant change is detected, the data is written to the `Sensors` collection in Firestore.
-
-
 
 ## Function to Listen for Realtime Database Changes
 
@@ -367,12 +363,12 @@ The application uses a function to monitor changes in the Firebase Realtime Data
 ```dart
 void monitorSensorData() {
   DatabaseReference ref = FirebaseDatabase.instance.ref("sensor_data");
-  
+
   ref.onValue.listen((DatabaseEvent event) {
     Map<String, dynamic
 
 > newSensorData = event.snapshot.value as Map<String, dynamic>;
-    
+
     // Check for significant changes
     if (isChangeSignificant(newSensorData)) {
       // Create new document in Firestore with a random ID
@@ -401,12 +397,12 @@ Future<bool> isChangeSignificant(Map<String, dynamic> newData) async {
   Map<String, dynamic>? previousData = await getPreviousSensorData(newData['sensor_ID']);
 
   if (previousData == null || previousData.isEmpty) {
-  
+
     return true;
   }
 
-  
-  bool isSignificant = 
+
+  bool isSignificant =
       (newData['moisture'] - previousData['moisture']).abs() > moistureThreshold ||
       (newData['temperature'] - previousData['temperature']).abs() > temperatureThreshold ||
       (newData['nitrogen'] - previousData['nitrogen']).abs() > nitrogenThreshold ||
@@ -436,7 +432,6 @@ Future<Map<String, dynamic>?> getPreviousSensorData(String sensorID) async {
 
 ```
 
-
 ### Explanation:
 
 #### `isChangeSignificant`:
@@ -453,19 +448,14 @@ Future<Map<String, dynamic>?> getPreviousSensorData(String sensorID) async {
 
 `Note:` This is a demo function to show how we have automated our database. Use it on your own risk.
 
-
 ## Additional Considerations
 
 - **Scalability**: Firestore and Realtime Database together provide both structured querying and real-time updates, allowing for a flexible and scalable database design.
-  
 - **Security**: Ensure proper **Firebase Security Rules** are set to allow only authenticated users to read/write their own data.
-
-
 
 This structure provides a clear and scalable way to manage posts, comments, and sensor data in the application.
 
 ---
-
 
 ## Api Used in this project
 
