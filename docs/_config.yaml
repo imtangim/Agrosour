@@ -5,7 +5,7 @@ theme: jekyll-theme-merlot
 # Assets configuration
 assets:
   # Specify the assets path
-  img_dir: docs/assets/screenshot/
+  img_dir: docs/assets/screenshot
   
 # Permalinks settings
 permalink: pretty
