@@ -267,7 +267,60 @@
             margin-bottom: 40px;
         }
 
+        .dataset-api-section {
+            /* padding: 40px 20px; */
+            /* background-color: #ffffff; */
+            text-align: center;
+        }
 
+        .dataset-api-section h2 {
+            /* font-size: 2.5em; */
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .dataset-api-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dataset-api-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dataset-api-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .dataset-api-item h3 {
+            /* font-size: 1.6em; */
+            margin-bottom: 10px;
+            color: #e59a54;
+        }
+
+        .dataset-api-item p {
+            font-size: 1em;
+            color: #555555;
+            line-height: 1.6;
+        }
+
+        .dataset-api-item a {
+            text-decoration: none;
+            color: #e59a54;
+            transition: color 0.3s ease;
+        }
+
+        .dataset-api-item a:hover {
+            color: #d08a48;
+        }
 
         /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
@@ -363,7 +416,7 @@
     </section>
     <!-- Features Section -->
     <section class="features">
-        <h2>Features</h2>
+        <h2>Current Features</h2>
         <ul class="feature-list">
             <li>User Profile for personalized tracking</li>
             <li>Google Authentication for secure sign-in</li>
@@ -375,6 +428,41 @@
             <li>Community Features for sharing insights</li>
             <li>Global Natural Event Showcase via NASA API</li>
         </ul>
+    </section>
+
+    <!-- Used Dataset and API Section -->
+    <section class="dataset-api-section">
+        <h2>Dataset/API Used</h2>
+        <div class="dataset-api-container">
+            <div class="dataset-api-item">
+                <h3><a href="https://eonet.gsfc.nasa.gov/" target="_blank">EONET (NASA Earth Observatory Natural Event
+                        Tracker)</a></h3>
+                <p>Offers real-time data on natural events like floods, fires, and environmental changes that impact
+                    farming conditions.</p>
+            </div>
+            <div class="dataset-api-item">
+                <h3><a href="https://svs.gsfc.nasa.gov/4523/#media_group_330804" target="_blank">Asia Irrigation Only
+                        (No Groundwater Depletion)</a></h3>
+                <p>Focuses on irrigation activities in Asia, helping farmers with water management based on regional
+                    trends.</p>
+            </div>
+            <div class="dataset-api-item">
+                <h3><a href="https://svs.gsfc.nasa.gov/4523/#media_group_330805" target="_blank">Asia Groundwater
+                        Depletion Only (No Irrigation)</a></h3>
+                <p>Provides groundwater depletion data for Asia, helping to address over-extraction concerns and manage
+                    water use more effectively.</p>
+            </div>
+            <div class="dataset-api-item">
+                <h3><a href="https://openweathermap.org/" target="_blank">OpenWeather API</a></h3>
+                <p>Delivers localized weather data such as temperature, humidity, wind speed, and rain probability for
+                    real-time weather forecasting.</p>
+            </div>
+            <div class="dataset-api-item">
+                <h3><a href="https://open-meteo.com/en/docs/flood-api" target="_blank">Open-Meteo API</a></h3>
+                <p>Provides free weather forecasts, including rainfall, temperature, and humidity, used to inform
+                    irrigation suggestions and field conditions.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Screenshots Section -->
